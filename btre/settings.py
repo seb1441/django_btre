@@ -14,6 +14,8 @@ import os
 
 from django.core.exceptions import ImproperlyConfigured
 
+import django_heroku
+
 msg = "Set the %s environment variable"
 
 def get_env_variable(var_name):
@@ -163,3 +165,5 @@ EMAIL_PORT = get_env_variable('EMAIL_PORT')
 EMAIL_HOST_USER = get_env_variable('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = get_env_variable('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS=True
+
+django_heroku.settings(locals())
